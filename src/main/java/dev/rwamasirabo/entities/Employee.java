@@ -2,40 +2,50 @@ package dev.rwamasirabo.entities;
 
 public class Employee {
 
-    private int empl_id;
-    private String first_name;
-    private String last_name;
+    private int emplid;
+    private String firstName;
+    private String lastName;
   public Employee(){
 
   }
 
-    public Employee(int empl_id, String first_name, String last_name) {
-        this.empl_id = empl_id;
-        this.first_name = first_name;
-        this.last_name = last_name;
+    public Employee(int emplid, String firstName, String lastName) {
+        this.emplid = emplid;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
-    public int getEmpl_id() {
-        return empl_id;
+
+    public int getEmplid() {
+        return emplid;
     }
 
-    public void setEmpl_id(int empl_id) {
-        this.empl_id = empl_id;
+    public void setEmplid(int emplid) {
+        this.emplid = emplid;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "emplid=" + emplid +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
     }
 }

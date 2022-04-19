@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface EmployeeDAO {
 
- void addEmployee(Employee employee);
+ boolean addEmployee(Employee employee);
 
     //    GET /employees
     List<Employee> getEmployees();
@@ -15,8 +15,8 @@ public interface EmployeeDAO {
     Employee getEmployee();
 
     //    PUT /employees/150
-    void updateEmployee(Employee employee);
+    boolean updateEmployee(Employee employee);
 
     //    DELETE /employees/190
-    void deleteEmployee(Integer employeeId);
+    boolean deleteEmployee(Integer employeeId);
 }

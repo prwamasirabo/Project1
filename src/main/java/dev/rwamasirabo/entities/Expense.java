@@ -1,61 +1,60 @@
 package dev.rwamasirabo.entities;
 
 public class Expense {
-    private int expense_id;
-    private int empl_id;
-    private double amount_used;
-    private String DateReq;
+    private int expenseId;
+    private int emplId;
+    private double amount;
+    private String dateReq;
+    private String status;
 
-    public Expense (){
-
+    public Expense() {
     }
 
-    public Expense(int expense_id, int empl_id, double amount_used, String dateReq) {
-        this.expense_id = expense_id;
-        this.empl_id = empl_id;
-        this.amount_used = amount_used;
-        DateReq = dateReq;
+    public Expense(int expenseId, int emplId, double amount, String dateReq, String status) {
+        this.expenseId = expenseId;
+        this.emplId = emplId;
+        this.amount = amount;
+        this.dateReq = dateReq;
+        this.status = status;
     }
 
-    public int getExpense_id() {
-        return expense_id;
+    public int getExpenseId() {
+        return expenseId;
     }
 
-    public void setExpense_id(int expense_id) {
-        this.expense_id = expense_id;
+    public void setExpenseId(int expenseId) {
+        this.expenseId = expenseId;
     }
 
-    public int getEmpl_id() {
-        return empl_id;
+    public int getEmplId() {
+        return emplId;
     }
 
-    public void setEmpl_id(int empl_id) {
-        this.empl_id = empl_id;
+    public void setEmplId(int emplId) {
+        this.emplId = emplId;
     }
 
-    public double getAmount_used() {
-        return amount_used;
+    public double getAmount() {
+        return amount;
     }
 
-    public void setAmount_used(double amount_used) {
-        this.amount_used = amount_used;
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
 
     public String getDateReq() {
-        return DateReq;
+        return dateReq;
     }
 
     public void setDateReq(String dateReq) {
-        DateReq = dateReq;
+        this.dateReq = dateReq;
     }
 
-    @Override
-    public String toString() {
-        return "Expense{" +
-                "expense_id=" + expense_id +
-                ", empl_id=" + empl_id +
-                ", amount_used=" + amount_used +
-                ", DateReq='" + DateReq + '\'' +
-                '}';
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

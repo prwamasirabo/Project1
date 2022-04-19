@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ExpenseDAO {
     //    POST /expenses
-    void addExpense(Expense expense);
+    boolean addExpense(Expense expense);
 
     //    GET /expenses?status=pending
     List<Expense> getExpenseByStatus(String status);
@@ -15,22 +15,17 @@ public interface ExpenseDAO {
     Expense getExpense(Integer expenseId);
 
     //    PUT /expenses/15
-    void updateExpense(Expense expense);
+    boolean updateExpense(Expense expense);
 
-    //    PATCH /expenses/20/approve
-    void approveExpense(Integer expenseId);
-
-    //    PATCH /expenses/20/deny
-    void denyExpense(Integer expenseId);
 
     //    DELETE/expenses/19
-    void deleteExpense(Integer expenseId);
+    boolean deleteExpense(Integer expenseId);
 
     //    GET /employees/120/expenses
     List<Expense> getExpensesByEmployeeId(Integer employeeId);
 
     //    POST /employees/120/expenses
-    void addExpenseByEmployeeId(Expense expense, Integer employeeId);
+    boolean addExpenseByEmployeeId(Expense expense, Integer employeeId);
 
 }
 
