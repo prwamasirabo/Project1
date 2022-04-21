@@ -6,13 +6,13 @@ import java.util.List;
 
 public interface EmployeeDAO {
 
- boolean addEmployee(Employee employee);
+    Employee addEmployee(Employee employee);
 
     //    GET /employees
     List<Employee> getEmployees();
 
     //    GET /employees/120
-    Employee getEmployee();
+    Employee getEmployee(Integer employeeId);
 
     //    PUT /employees/150
     boolean updateEmployee(Employee employee);

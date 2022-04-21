@@ -2,7 +2,7 @@ package dev.rwamasirabo.entities;
 
 public class Expense {
     private int expenseId;
-    private int emplId;
+    private int emplid;
     private double amount;
     private String dateReq;
     private String status;
@@ -10,9 +10,9 @@ public class Expense {
     public Expense() {
     }
 
-    public Expense(int expenseId, int emplId, double amount, String dateReq, String status) {
+    public Expense(int expenseId, int emplid, double amount, String dateReq, String status) {
         this.expenseId = expenseId;
-        this.emplId = emplId;
+        this.emplid = emplid;
         this.amount = amount;
         this.dateReq = dateReq;
         this.status = status;
@@ -26,12 +26,12 @@ public class Expense {
         this.expenseId = expenseId;
     }
 
-    public int getEmplId() {
-        return emplId;
+    public int getEmplid() {
+        return emplid;
     }
 
-    public void setEmplId(int emplId) {
-        this.emplId = emplId;
+    public void setEmplid(int emplid) {
+        this.emplid = emplid;
     }
 
     public double getAmount() {
@@ -56,5 +56,16 @@ public class Expense {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Expense{" +
+                "expenseId=" + expenseId +
+                ", emplid=" + emplid +
+                ", amount=" + amount +
+                ", dateReq='" + dateReq + '\'' +
+                ", status='" + status + '\'' +
+                '}';
     }
 }
