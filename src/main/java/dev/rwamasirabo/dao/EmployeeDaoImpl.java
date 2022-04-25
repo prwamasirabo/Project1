@@ -115,11 +115,12 @@ public class EmployeeDaoImpl implements EmployeeDAO {
 
             try {
                 Connection conn = ConnectionUtil.getConnection();
-                String sql = "update employee set first_name = ?, lats_name = ?";
+                String sql = "update employee set first_name = ?, last_name = ? where empl_id=?";
                 PreparedStatement ps = conn.prepareStatement(sql);
                 ps.setString(1, employee.getFirstName());
                 ps.setString(2, employee.getLastName());
                 ps.setInt(3, employee.getEmplid());
+
                 int rowsUpdated = ps.executeUpdate();
 
                 if(rowsUpdated == 0){
@@ -130,7 +131,7 @@ public class EmployeeDaoImpl implements EmployeeDAO {
 
             } catch (SQLException e) {
                 e.printStackTrace();
-                returnValue = false ;
+
             }
             return returnValue;
 
@@ -141,7 +142,7 @@ public class EmployeeDaoImpl implements EmployeeDAO {
         boolean returnValue = false;
         try {
             Connection conn = ConnectionUtil.getConnection();
-            String sql = "delete employee set empl_id = ?";
+            String sql = "delete from employee where empl_id = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1, employeeId.intValue());
             int rowsUpdated = ps.executeUpdate();
@@ -154,7 +155,7 @@ public class EmployeeDaoImpl implements EmployeeDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
-            returnValue = false ;
+
         }
         return returnValue;
     }

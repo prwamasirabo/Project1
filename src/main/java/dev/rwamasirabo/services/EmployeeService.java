@@ -1,9 +1,10 @@
 package dev.rwamasirabo.services;
 import dev.rwamasirabo.entities.Employee;
 import java.util.List;
+
 public interface EmployeeService {
     //    POST /employees
-    void addEmployee(Employee employee);
+    Employee addEmployee(Employee employee);
 
     //    GET /employees
     List<Employee> getEmployees();
@@ -12,10 +13,15 @@ public interface EmployeeService {
     Employee getEmployee();
 
     //    PUT /employees/150
-    void updateEmployee(Employee employee);
+    Employee updateEmployee(int empl_id);
 
     //    DELETE /employees/190
-    void deleteEmployee(Integer employeeId);
+    //void deleteEmployee(Integer employeeId);
 
+    Employee deleteEmployee(Employee employee);
+
+    boolean updateEmployee(Employee employee);
+
+    boolean deleteEmployee(int empl_id);
 }
 
