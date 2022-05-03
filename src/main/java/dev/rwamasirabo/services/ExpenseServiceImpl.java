@@ -1,52 +1,71 @@
 package dev.rwamasirabo.services;
 
+import dev.rwamasirabo.dao.ExpenseDAO;
+import dev.rwamasirabo.dao.ExpenseDaoImpl;
 import dev.rwamasirabo.entities.Expense;
+import dev.rwamasirabo.utilities.Statuses;
 
 import java.util.List;
-public class ExpenseServiceImpl implements ExpenseService{
-    @Override
-    public void addExpense(Expense expense) {
+public class ExpenseServiceImpl implements ExpenseService {
 
+    public ExpenseDAO expenseDAO;
+
+    //Constructor for expenseDao
+    public ExpenseServiceImpl (ExpenseDaoImpl expenseDAO) {
+        this.expenseDAO = expenseDAO;
+    }
+
+    @Override
+    public boolean addExpense(Expense expense) {
+        return this.expenseDAO.addExpense(expense);
     }
 
     @Override
     public List<Expense> getExpenseByStatus(String status) {
-        return null;
+        return this.expenseDAO.getExpenseByStatus(status);
+    }
+
+    @Override
+    public List<Expense> getExpense() {
+        return this.expenseDAO.getExpenses();
     }
 
     @Override
     public Expense getExpense(Integer expenseId) {
-        return null;
+        return this.expenseDAO.getExpense(expenseId);
     }
 
     @Override
-    public void updateExpense(Expense expense) {
+    public boolean updateExpense(Expense expense) {
+        return this.expenseDAO.updateExpense(expense);
+    }
 
+
+    @Override
+    public boolean approveExpense(Integer expenseId) {
+
+        Expense expense = this.expenseDAO.getExpense(expenseId);
+        expense.setStatus(Statuses.approvedStatus);
+        return this.expenseDAO.updateExpense(expense);
     }
 
     @Override
-    public void approveExpense(Integer expenseId) {
-
+    public boolean denyExpense(Integer expenseId) {
+        Expense expense = this.expenseDAO.getExpense(expenseId);
+        expense.setStatus(Statuses.deniedStatus);
+        return this.expenseDAO.updateExpense(expense);
     }
 
     @Override
-    public void denyExpense(Integer expenseId) {
-
+    public boolean deleteExpense(Integer expenseId) {
+        return this.expenseDAO.deleteExpense(expenseId);
     }
 
-    @Override
-    public void deleteExpense(Integer expenseId) {
-
-    }
 
     @Override
     public List<Expense> getExpensesByEmployeeId(Integer employeeId) {
-        return null;
+        return this.expenseDAO.getExpensesByEmployeeId(employeeId);
     }
 
-    @Override
-    public void addExpenseByEmployeeId(Expense expense, Integer employeeId) {
-
-    }
 }
 

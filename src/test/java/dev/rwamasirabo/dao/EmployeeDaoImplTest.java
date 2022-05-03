@@ -15,7 +15,7 @@ class EmployeeDaoImplTest {
     @Test
     @Order(1)
     void addEmployee() {
-        Employee john = new Employee(0,"Thomas","Bell");
+        Employee john = new Employee(0,"Daniella","Janet");
         Employee savedEmployee  = employeeDAO.addEmployee(john);
         EmployeeDaoImplTest.testEmployee = savedEmployee;// I have a book I can use in other tests
         Assertions.assertNotEquals(0,savedEmployee.getEmplid());
@@ -39,10 +39,10 @@ class EmployeeDaoImplTest {
     @Test
     @Order(3)
     void updateEmployee() {
-        EmployeeDaoImplTest.testEmployee.setFirstName("Pop");
+        EmployeeDaoImplTest.testEmployee.setFirstName("patrick");
         employeeDAO.updateEmployee(testEmployee);
         Employee retrievedEmployee = employeeDAO.getEmployee(testEmployee.getEmplid());
-        Assertions.assertEquals("Pop", retrievedEmployee.getFirstName());
+        Assertions.assertEquals("George", retrievedEmployee.getFirstName());
     }
 
     @Test

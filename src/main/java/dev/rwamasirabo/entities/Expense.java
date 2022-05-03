@@ -4,13 +4,13 @@ public class Expense {
     private int expenseId;
     private int emplid;
     private double amount;
-    private String dateReq;
+    private long dateReq;
     private String status;
 
     public Expense() {
     }
 
-    public Expense(int expenseId, int emplid, double amount, String dateReq, String status) {
+    public Expense(int expenseId, int emplid, double amount, long dateReq, String status) {
         this.expenseId = expenseId;
         this.emplid = emplid;
         this.amount = amount;
@@ -42,11 +42,11 @@ public class Expense {
         this.amount = amount;
     }
 
-    public String getDateReq() {
+    public long getDateReq() {
         return dateReq;
     }
 
-    public void setDateReq(String dateReq) {
+    public void setDateReq(long dateReq) {
         this.dateReq = dateReq;
     }
 

@@ -8,6 +8,8 @@ public interface ExpenseDAO {
     //    POST /expenses
     boolean addExpense(Expense expense);
 
+    List<Expense> getExpenses();
+
     //    GET /expenses?status=pending
     List<Expense> getExpenseByStatus(String status);
 
@@ -24,8 +26,10 @@ public interface ExpenseDAO {
     //    GET /employees/120/expenses
     List<Expense> getExpensesByEmployeeId(Integer employeeId);
 
-    //    POST /employees/120/expenses
-    boolean addExpenseByEmployeeId(Expense expense, Integer employeeId);
+    //    PATCH /expenses/20/approve
+    boolean approveExpense(int expenseId);
 
+    //    PATCH /expenses/20/deny
+    boolean denyExpense(int expenseId);
 }
 
